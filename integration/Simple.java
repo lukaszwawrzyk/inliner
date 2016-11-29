@@ -1,11 +1,11 @@
 public class Simple {
-    public int counter = 0;
+    public int value;
 
-    public void incCounter() {
-        counter++;
+    public Simple(int value) {
+        this.value = value;
     }
 
-    public int getCounter() {
-        return counter;
+    public int getSomething() {
+        return this.value * 2;
     }
 }

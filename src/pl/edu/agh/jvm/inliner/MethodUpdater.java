@@ -48,7 +48,8 @@ class MethodUpdater {
 
     private void performInlining(InstructionList originalInstructions, InstructionHandle instructionHandle, INVOKEVIRTUAL invoke) {
         InstructionList instructionsToInline = getImplementationToInline(invoke);
-        new Inliner(originalInstructions, instructionHandle, instructionsToInline, callerClassConstants, classToInlineConstants).inlineInstructions();
+        String classToInlineName = classToInline.getClassName();
+        new Inliner(originalInstructions, instructionHandle, instructionsToInline, callerClassConstants, classToInlineConstants, classToInlineName).inlineInstructions();
     }
 
 

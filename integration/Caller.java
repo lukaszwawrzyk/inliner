@@ -1,14 +1,15 @@
-class Caller {
-    public static void main(String... args) {
-        Simple simple = new Simple();
-        simple.incCounter();
-        simple.incCounter();
-        int counter = simple.getCounter();
-        System.out.println(counter);
+import java.util.*;
+public class Caller {
+    public static void main(String[] args) {
+        Collection<Simple> objs = new ArrayList<Simple>();
+        objs.add(new Simple(4));
+        objs.add(new Child(4));
+        objs.add(new Child(4));
+        objs.add(new Simple(4));
 
-        if (simple instanceof Simple) {
-            return;
+        for (Iterator<Simple> it = objs.iterator(); it.hasNext();) {
+            Simple obj = it.next();
+            System.out.println("obj: " + obj.getSomething());
         }
-        System.out.println("xx");
     }
 }
